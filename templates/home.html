@@ -9,19 +9,26 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom:16px;
       }
     </style>
     <title>Jovian Careers</title>
       <link rel="icon" type="image/png" href="konoha.png"/>
   </head>
   <body>
-    <div class="container">
-    <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+    {% include "nav.html" %}
     <img class="img-fluid" id="banner" src="https://jovian-careers-website-1.johnhypnosisbr.repl.co/static/banner.jpg" >
-    <h2 class="text-center mt-2 mb-4">Your #1 source of fulfillment</h2>
-    <p class="lead">
+    <div class="container">
+      <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
+      <div class="row" style:"margin-bottom:16px;">
+        <div class="col-md-6">
+      <p class="lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id suscipit dui. Aliquam a tortor vestibulum, euismod libero nec, fringilla massa. Integer fermentum viverra sem ut volutpat. Ut at convallis justo, a dapibus justo. Quisque et justo sit amet diam suscipit interdum vitae vel lorem. Nunc ornare mauris scelerisque auctor placerat. Nullam a faucibus nisi. Duis a fringilla diam, et porttitor lorem. Suspendisse quis bibendum lorem, eu maximus est. Etiam vitae lorem auctor, pretium nisi sit amet, hendrerit sem. Duis nec libero quis leo ultrices faucibus scelerisque ac arcu.
-        </p>
+      </p>
+        </div>
+        <div class="d-none d-md-block col-md-6">
+        <img src="/static/people.jpg" style="height:320px;border-radius:4px;">
+        </div>
         <h2 class="text-center mt-2 mb-4">Open Positions</h2>
         <p>
           {% for job in jobs %}
@@ -29,8 +36,8 @@
           {% endfor %}
         </p>
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class="mt-4">Copyright 2022, Gratijohn</p>
+        <a href="mailto:me@gratijohn.ai?subject=Question%20about%20Job%20Openings&body=Your%20name%3A%20%3Cname%20here%3E%0D%0A%0D%0AYour%20question%3A%20%3Cquestion%20here%3E" class="btn btn-primary btn-lg">Contact Us</a>
       </div>
+      {% include "footer.html" %}
   </body>
 </html>
